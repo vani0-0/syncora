@@ -1,6 +1,6 @@
 import type { ApiError } from '@/common/interfaces'
-
 import type { NextFunction, Request, Response } from '@/common/types/express-types'
+
 import { HttpStatusCode } from '@/common'
 
 export function missingRouteHandler() {
