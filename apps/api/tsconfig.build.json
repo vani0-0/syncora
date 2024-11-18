@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "diagnostics": true,
+    "listEmittedFiles": true,
+    "outDir": "./dist",
+    "pretty": true,
+    "sourceMap": true
+  },
+  "exclude": ["node_modules", "dist", "prisma"]
+}

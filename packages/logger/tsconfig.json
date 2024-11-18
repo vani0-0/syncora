@@ -1,0 +1,9 @@
+{
+  "extends": "@syncora/typescript-config/base.json",
+  "compilerOptions": {
+    "rootDir": "lib",
+    "outDir": "dist"
+  },
+  "include": ["lib"],
+  "exclude": ["node_modules", "dist"]
+}

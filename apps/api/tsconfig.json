@@ -1,0 +1,21 @@
+{
+  "extends": "@syncora/typescript-config/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "src",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": [
+      "./src/common/types/lib-defs/env.d.ts",
+      "./src/common/types/environment.d.ts",
+      "./src/common/types/express-types.d.ts"
+    ],
+    "outDir": "dist"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"],
+  "ts-node": {
+    "swc": true
+  }
+}

@@ -1,0 +1,16 @@
+openapi: 3.0.3
+info:
+  title: Syncora Routes
+  version: 1.0.0
+paths:
+  /:
+    get:
+      summary: Responds with a friendly message
+      responses:
+        '200':
+          description: Succesful response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Hi

@@ -1,0 +1,26 @@
+{
+  "name": "syncora",
+  "version": "1.0.0",
+  "private": "true",
+  "packageManager": "pnpm@9.12.3",
+  "description": "A simple, modern name conveying a tech stack-focused project.",
+  "author": "Vince^^ <'https://github.com/vani0-0'>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "build": "turbo build",
+    "clean": "turbo clean && rm -rf node_modules",
+    "dev": "turbo dev",
+    "check-types": "turbo check-types",
+    "lint": "turbo lint"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.9.1",
+    "eslint": "^9.14.0",
+    "turbo": "^2.3.0",
+    "typescript": "^5.6.3"
+  }
+}
