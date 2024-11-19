@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": "ts",
   "ignore": ["dist"],
-  "exec": "cross-env NODE_ENV=development ts-node-dev --project tsconfig.dev.json -r tsconfig-paths/register --transpile-only --respawn --exit-child ./src/index.ts"
+  "exec": "pnpm prisma:generate && cross-env NODE_ENV=development ts-node-dev --project tsconfig.dev.json -r tsconfig-paths/register --transpile-only --respawn --exit-child ./src/index.ts"
 }

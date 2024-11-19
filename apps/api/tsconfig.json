@@ -11,6 +11,7 @@
       "./src/common/types/environment.d.ts",
       "./src/common/types/express-types.d.ts"
     ],
+    "strictPropertyInitialization": false,
     "outDir": "dist"
   },
   "include": ["src"],
