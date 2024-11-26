@@ -24,6 +24,7 @@ function bootstrap(process: NodeJS.Process, cpuCount: number) {
       })
 
       app.use(requestLogger()) // <-- example of adding middleware
+
       await connectPrisma()
       await app.listen(PORT, () => {
         printAppInfo(

@@ -3,12 +3,15 @@ import type { ExpressRouter, HttpAdapter, HttpServer } from '@/common/types/expr
 import type { CorsOptions, CorsOptionsDelegate } from 'cors'
 
 import { createServer } from 'node:http'
+import process from 'node:process'
 import { errorHandler, missingRouteHandler } from '@/middlewares'
 import { loadPackage } from '@/utils'
 import { Logger } from '@syncora/logger'
 import { isFunction } from '@syncora/utils/shared'
+import passport from 'passport'
 import { type ApplicationConfig, swaggerSpec } from '../config'
 import { MESSAGES } from '../constants'
+import '@/network/strategies'
 
 export class ExpressApplication implements IExpressApplication {
   protected readonly logger = new Logger(ExpressApplication.name, { timestamp: true })
@@ -42,6 +45,7 @@ export class ExpressApplication implements IExpressApplication {
     this.httpAdapter.use(cookieParser())
     this.httpAdapter.set('trust proxy', 1)
 
+    await this.registerPassport()
     await this.registerRouter()
     await this.registerSwagger()
 
@@ -105,6 +109,10 @@ export class ExpressApplication implements IExpressApplication {
         }
       })
     })
+  }
+
+  private async registerPassport() {
+    this.httpAdapter.use(passport.initialize())
   }
 
   private async registerRouter() {

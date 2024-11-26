@@ -3,7 +3,7 @@ import { availableParallelism } from 'node:os'
 import { PrimaryProcess, WorkerProcess } from '@/core/workers'
 
 function main() {
-  const cpuCount = availableParallelism()
+  const cpuCount = 1
 
   if (cluster.isPrimary) {
     PrimaryProcess(cpuCount, cluster)

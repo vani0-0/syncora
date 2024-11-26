@@ -23,6 +23,9 @@ function validateEnv() {
     'FRONTEND_BASE_URL',
     'BACKEND_BASE_URL',
     'DATABASE_URL',
+    'COOKIE_SECRET',
+    'JWT_ACCESS_TOKEN_SECRET',
+    'JWT_REFRESH_TOKEN_SECRET',
   ]
   const missingVariables = requiredVariables.filter(variable => !process.env[variable])
   if (missingVariables.length > 0) {
